@@ -1,0 +1,46 @@
+{
+  "name": "axe-appium-ios",
+  "version": "0.2.0-alpha.0",
+  "description": "autotest by appium",
+  "main": "./lib/index.js",
+  "bin": {
+    "axe-mocha": "./bin/axe-mocha.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/axe-org/axe-appium-ios.git"
+  },
+  "keywords": [
+    "appium",
+    "axe"
+  ],
+  "author": "lxm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axe-org/axe-appium-ios/issues"
+  },
+  "homepage": "https://github.com/axe-org/axe-appium-ios#README",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "rimraf": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "tmp": "0.0.33",
+    "wd": "^1.11.0",
+    "xml2json": "^0.11.2"
+  }
+}

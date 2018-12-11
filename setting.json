@@ -1,0 +1,12 @@
+{
+  "debugTestDevices": [], //指定测试设备列表。 如果为空，表示使用第一个真机设备。
+  "releaseTestDevices": [], // 指定测试列表。 如果为空，表示所有真机设备。  使用的值为 udid。
+  // 性能测试设置。
+  "profileTestSetting": {
+    "AXE" : [], // 性能测试，与指定设备列表。
+    "Time Profiler" : [], // ['xxxxxxx'](指定udid)
+    "Leaks" : [] // [](第一台设备)
+  }, 
+  "testOutputDir": "../build/autotest",// 测试文件输出路径， 必须设置。
+  "testServer": "http://10.95.4.123:2670", // local 表示在本地测试，默认使用 第一个网卡地址， 端口号默认为 2670
+}
