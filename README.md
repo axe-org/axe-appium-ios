@@ -72,6 +72,7 @@
 		brew cask install osxfuse
 		brew install ifuse 
 
+* TraceUtil安装 ： 见[TraceUtility](https://github.com/axe-org/TraceUtility) 仓库，目前需要手动编译并安装，以支持分析性能测试数据。
 
 ### 测试约束
 
@@ -86,3 +87,10 @@
 *  mark(title) : 截图并记录信息。
 *  action ： 在脚本中，获取到最近的业务组件的交互信息，目前不推荐使用。
 *  createScenario() 和 endScenario(): 测试用例的开始和结束的信息上报。 
+
+### 相关库
+
+* [axe-instruments-profiler](https://github.com/axe-org/axe-instruments-profiler) : AXE提供的自定义`Instruments`，获取应用的CPU使用率、内存情况、磁盘读写、FPS和GPU使用率、网络读写情况。
+* [TraceUtility](https://github.com/axe-org/TraceUtility) : 从`Instruments`文档中导出数据的工具。
+* [axe-test-server](https://github.com/axe-org/axe-test-server) : 测试服务器，用于接受`appium`测试脚本和测试设备上报数据，整理测试报告。
+* [axe-test-report](https://github.com/axe-org/axe-test-report.git) : 测试报告网页部分。 需要结合测试服务器的数据，才能正确展示测试报告。

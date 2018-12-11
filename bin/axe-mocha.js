@@ -4,7 +4,12 @@ const device = require('./device')
 const _mocha = require('./mocha')
 const fs = require('fs')
 const reporter = require('./reporter')
+const npmRun = require('npm-run')
 // const process = require('child_process')
+
+npmRun.exec('axe-test-server', {cwd: process.cwd()}, function () {
+})
+require('child_process').spawnSync('sleep', [2])
 
 let testType = 'debug'
 if (process.argv.length === 3) {
@@ -25,15 +30,18 @@ if (!setting.testOutputDir) {
   process.exit(1)
 } else {
   // 创建文件夹
-  if (fs.existsSync(setting.testOutputDir)) {
+  let testOutputDir = path.resolve(setting.testOutputDir)
+  if (fs.existsSync(testOutputDir)) {
     // fs.rmdirSync(setting.testOutputDir)
-    require('child_process').execSync('rm -rf ' + setting.testOutputDir)
+    require('child_process').execSync('rm -rf ' + testOutputDir)
   }
-  fs.mkdirSync(setting.testOutputDir)
+  fs.mkdirSync(testOutputDir)
   // 告知服务器文件存储路径.
-  reporter.setReporterSavePath(path.resolve(setting.testOutputDir))
+  reporter.setReporterSavePath(testOutputDir)
+  // 下载测试报告到该目录。
+  require('child_process').exec(`curl -L https://github.com/axe-org/axe-test-report/releases/download/v0.2.0-alpha.0/axe-test-report.zip > axe-test-report.zip && unzip axe-test-report.zip && rm axe-test-report.zip`,
+    {cwd: testOutputDir})
 }
-
 device.getDeviceInfo((error) => {
   if (error) {
     process.exit(1)
