@@ -2,6 +2,15 @@
 
 在 `Axe`系统中，使用 `appium`做自动化测试。`appium`为黑盒UI测试， 我们的自动化测试，基于`Appium`, 添加性能测试功能， 并制作测试报告。
 
+### 当前情况
+
+目前 Axe的自动化测试功能已初步成型， 以下有两份测试报告可供了解：
+
+* [性能测试报告](http://resource.luoxianming.cn/axe/final/index.html)  （[打包下载](http://resource.luoxianming.cn/axe/final.zip)）
+* 普通测试报告
+
+但是还有一些部分没有开发完成。 对于整个自动化测试功能，是作为 `Axe`框架的`v0.2`版本的重大更新， 框架下几乎所有库都要有相应的变更，所以预计还要一段时间才能正式发布。
+
 ### 基础功能
 
 1. 记录测试中关键节点的截图。
@@ -43,13 +52,6 @@
 
 * `testServer` : 测试服务器的地址，测试服务器默认由`axe-appium-ios`调起，与`appium`客户端位于同一台机器中，使用端口2670. 但是测试设备也要访问测试服务器，所以设备与测试服务器要在同一个网络环境下，而这里写的服务器地址，是给测试设备访问测试服务器使用的。 如 ：`"testServer":"http://192.168.1.3:2670"`
 * `testOutputDir` : 测试数据和报告输出文件夹，应固定为 `../build/autotest` . 测试用例放在项目的`test`目录下，而测试输出在项目的`build`目录下。
-
-### 当前情况
-
-目前 Axe的自动化测试功能已初步成型， 以下有两份测试报告可供了解：
-
-* [性能测试报告](http://resource.luoxianming.cn/axe/final/index.html)  （[打包下载](http://resource.luoxianming.cn/axe/final.zip)）
-* 普通测试报告
 
 ## 使用细节
 
