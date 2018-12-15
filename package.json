@@ -1,6 +1,6 @@
 {
   "name": "axe-appium-ios",
-  "version": "0.2.0-alpha.1",
+  "version": "0.2.0-alpha.6",
   "description": "autotest by appium",
   "main": "./lib/index.js",
   "bin": {

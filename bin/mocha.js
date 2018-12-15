@@ -7,7 +7,7 @@ const os = require('os')
 const fs = require('fs')
 
 let localAddress
-function run (setting) {
+async function run (setting) {
   let ifaces = os.networkInterfaces()
   Object.keys(ifaces).forEach(function (ifname) {
     ifaces[ifname].forEach(function (iface) {
@@ -24,11 +24,11 @@ function run (setting) {
   }
   process.env.reporterServerURL = reporterServerURL
   if (setting.testType === 'debug') {
-    debugTest(setting)
+    await debugTest(setting)
   } else if (setting.testType === 'profile') {
-    profileTest(setting)
+    await profileTest(setting)
   } else if (setting.testType === 'release') {
-    releaseTest(setting)
+    await releaseTest(setting)
   } else {
     console.error('请设置正确的 测试类型！')
     process.exit(1)
